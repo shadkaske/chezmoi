@@ -15,6 +15,8 @@ abbr --add czap chezmoi apply
 abbr --add czdf chezmoi diff
 abbr --add czad chezmoi add
 
+abbr --add ls eza --icons
+
 abbr --add lg lazygit
 
 fish_config theme choose "Catppuccin Mocha"
