@@ -3,6 +3,7 @@ set -g fish_greeting
 fish_add_path $HOME/.local/bin/
 fish_add_path $HOME/.cargo/bin/
 fish_add_path $HOME/.fzf/bin/
+fish_add_path /usr/local/lib/npm/bin/
 
 set --universal pure_shorten_prompt_current_directory_length 1
 set --universal pure_enable_single_line_prompt true
@@ -18,6 +19,9 @@ abbr --add czad chezmoi add
 abbr --add ls eza --icons
 
 abbr --add lg lazygit
+
+abbr --add tinker php artisan tinker
+abbr --add artisan php artisan
 
 fish_config theme choose "Catppuccin Mocha"
 
