@@ -1,0 +1,117 @@
+# If you come from bash you might have to change your $PATH.
+source "$HOME/.zshenv"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.local/share/oh-my-zsh"
+
+# Theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# hyphen-insensitive completion.
+# HYPHEN_INSENSITIVE="true"
+
+# Auto Update
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it'S time
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+COMPLETION_WAITING_DOTS="true"
+
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+ZSH_CUSTOM="$HOME/.local/share/zsh-custom"
+
+plugins=(
+    alias-finder
+    aliases
+    ansible
+    artisan
+    composer
+    fast-syntax-highlighting
+    fd
+    git
+    git-flow
+    systemd
+    tmux
+    ubuntu
+    vagrant
+    vi-mode
+    zoxide
+    zsh-autosuggestions
+    zsh-bat
+    zsh-eza
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Keybinds
+bindkey '^ ' autosuggest-accept
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'ee' edit-command-line
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# Set personal aliases
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias sailinit='docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php82-composer:latest composer install --ignore-platform-reqs'
+alias gs="git status"
+alias gpl="git pull"
+alias fa="alias | fzf --border-label='Find Aliases' --prompt='Search > '"
+alias gpoat="git push origin --all && git push origin --tags"
+alias lg="lazygit"
+alias fm="ranger"
+alias c="code ."
+alias tsu="sudo tailscale up --accept-routes"
+alias tsd="sudo tailscale down"
+alias lap="eza -alh | batcat -l fs"
+alias cl="clear"
+alias nv="nvim"
+alias n="nvim"
+alias tinker="php artisan tinker"
+alias a="php artisan"
+
+# Php Dev Aliases
+alias xoff='sudo phpdismod xdebug'
+alias xon='sudo phpenmod xdebug'
+alias sxoff='sail root-shell phpdismod xdebug'
+alias sxon='sail root-shell phpenmod xdebug'
+
+[ -f ~/.local/share/fzf.zsh ] && source ~/.local/share/fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.local/share/p10k.zsh ]] || source ~/.local/share/p10k.zsh
+
+export DEFAULT_USER="$USER"
