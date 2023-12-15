@@ -1,0 +1,68 @@
+add_newline = false
+
+format = """
+$line_break\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$python\
+$character"""
+
+right_format = """
+$status\
+$commnad_duration\
+$php\
+$sudo"""
+
+[directory]
+style = "blue"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$symbol](white)[$branch]($style) "
+style = "bright-black"
+symbol = " "
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[status]
+disabled = false
+
+[sudo]
+format='[$symbol]($style)'
+disabled = false
+symbol = " "
+style = "bright-cyan"
+
+[php]
+format = '[$symbol$version]($style)'
+symbol = '󰌟 '
+version_format = '${patch}'
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
