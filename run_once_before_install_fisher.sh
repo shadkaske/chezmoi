@@ -6,4 +6,5 @@ fisher install pure-fish/pure
 
 fisher install catppuccin/fish
 
-fish_config theme choose "Catppuccin Mocha"
+fisher install jorgebucaran/autopair.fish
+
