@@ -60,7 +60,7 @@ plugins=(
     zsh-bat
     zsh-eza
     {{ if eq .chezmoi.osRelease.id "arch" -}}
-    arch-linux
+    archlinux
     {{ else -}}
     ubuntu
     {{ end -}}
@@ -114,6 +114,8 @@ alias sxoff='sail root-shell phpdismod xdebug'
 alias sxon='sail root-shell phpenmod xdebug'
 
 [ -f ~/.local/share/fzf.zsh ] && source ~/.local/share/fzf.zsh
+
+# eval "$(starship init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.local/share/p10k.zsh ]] || source ~/.local/share/p10k.zsh
