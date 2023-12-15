@@ -5,9 +5,6 @@ fish_add_path $HOME/.cargo/bin/
 fish_add_path $HOME/.fzf/bin/
 fish_add_path /usr/local/lib/npm/bin/
 
-set --universal pure_shorten_prompt_current_directory_length 1
-set --universal pure_enable_single_line_prompt true
-
 set -Ux EDITOR nvim
 
 abbr --add czcd cd (chezmoi source-path)

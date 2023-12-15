@@ -1,5 +1,3 @@
-add_newline = false
-
 format = """
 $line_break\
 $username\
@@ -9,6 +7,7 @@ $git_branch\
 $git_state\
 $git_status\
 $python\
+$line_break\
 $character"""
 
 right_format = """
@@ -20,15 +19,17 @@ $sudo"""
 [directory]
 style = "blue"
 
+[line_break]
+disabled = true
+
 [character]
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "[$symbol](white)[$branch]($style) "
+format = "[$branch]($style) "
 style = "bright-black"
-symbol = " "
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -48,6 +49,24 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+
+[os]
+disabled = false
+
+[os.symbols]
+Arch = "󰣇 "
+Debian = " "
+Fedora = " "
+Linux = " "
+Mint = "󰣭 "
+NixOS = "󱄅 "
+openSUSE = " "
+Pop = " "
+Raspbian = " "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
+Ubuntu = " "
+Unknown = " "
 
 [status]
 disabled = false
