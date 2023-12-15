@@ -23,6 +23,11 @@ abbr --add lg lazygit
 abbr --add tinker php artisan tinker
 abbr --add artisan php artisan
 
+abbr --add - cd -
+abbr --add ... cd ../..
+abbr --add .... cd ../../..
+abbr --add ..... cd ../../../..
+
 fish_config theme choose "Catppuccin Mocha"
 
 starship init fish | source
