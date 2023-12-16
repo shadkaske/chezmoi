@@ -25,6 +25,8 @@ abbr --add ... cd ../..
 abbr --add .... cd ../../..
 abbr --add ..... cd ../../../..
 
+fish_ssh_agent
+
 fish_config theme choose "Catppuccin Mocha"
 
 starship init fish | source
