@@ -1,3 +1,7 @@
 function lad -d "List All and Page with Bat"
-    la $argv | bat --language fs --color always
+    if command -q bat
+        la $argv | bat --language fs --color always
+    else
+        la $argv | less
+    end
 end
