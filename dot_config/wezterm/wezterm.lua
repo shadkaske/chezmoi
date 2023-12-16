@@ -162,7 +162,7 @@ config.keys = {
 	},
 	{
 		key = "e",
-		mods = "ALT",
+		mods = "SHIFT|ALT",
 		action = act.PromptInputLine({
 			description = wezterm.format({
 				{ Attribute = { Intensity = "Bold" } },
