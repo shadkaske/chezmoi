@@ -20,8 +20,6 @@ abbr --add lg lazygit
 abbr --add tinker php artisan tinker
 abbr --add artisan php artisan
 
-abbr --add cat bat
-
 abbr --add - cd -
 abbr --add ... cd ../..
 abbr --add .... cd ../../..
