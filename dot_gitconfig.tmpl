@@ -1,0 +1,44 @@
+[user]
+name = Shad Kaske
+email = shadkaske@gmail.com
+[core]
+editor = nvim
+[merge]
+tool = nvim
+[diff]
+tool = nvimdiff
+[mergetool]
+keepBackup = false
+prompt = false
+[mergetool "vscode"]
+cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "nvimdiff"]
+cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[mergetool "nvim"]
+cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+[difftool "nvimdiff"]
+cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[mergetool "nvim"]
+cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+[pull]
+rebase = false
+[init]
+defaultBranch = master
+[protocol "file"]
+allow = always
+[gitflow "prefix"]
+	feature = feature/
+	bugfix = bugfix/
+	release = release/
+	hotfix = hotfix/
+	support = support/
+	versiontag =
+[gitflow "branch"]
+	master = master
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
