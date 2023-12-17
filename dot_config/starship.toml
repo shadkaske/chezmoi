@@ -1,4 +1,5 @@
 format = """
+$os\
 $line_break\
 $username\
 $hostname\
@@ -13,11 +14,25 @@ $character"""
 right_format = """
 $status\
 $commnad_duration\
-$php\
 $sudo"""
 
 [directory]
-style = "blue"
+style = "bold cyan"
+truncation_length = 4
+truncate_to_repo = false
+truncation_symbol = '…/'
+
+[username]
+style_user = 'yellow'
+style_root = 'black bold'
+format = '[$user]($style)@'
+disabled = false
+show_always = false
+
+[hostname]
+ssh_only = true
+format = '(bold blue)[$hostname](green) '
+disabled = false
 
 [line_break]
 disabled = true
