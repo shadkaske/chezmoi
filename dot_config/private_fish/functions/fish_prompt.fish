@@ -92,9 +92,10 @@ function fish_prompt
 
     set -l host_info ""
     if test -n "$SSH_TTY"
-        set -l host_info  "$red$USER$white@$yellow(prompt_hostname) "
+        set -l hname (prompt hostname)
+        set -l host_info  "$red$USER$white@$yellow$hname "
         # echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
     end
 
-    echo -n -s $host_info$arrow ' '$cwd $repo_info $normal ' '
+    echo -n -s $host_info $arrow ' '$cwd $repo_info $normal ' '
 end
