@@ -67,6 +67,7 @@ style = "yellow"
 
 [os]
 disabled = false
+style = "bold blue"
 
 [os.symbols]
 Arch = "󰣇 "
