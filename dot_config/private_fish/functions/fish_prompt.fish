@@ -62,6 +62,8 @@ function fish_prompt
     set -l green (set_color -o green)
     set -l blue (set_color -o blue)
     set -l normal (set_color normal)
+    set -l white (set_color -o white)
+    set -l brred (set_color -o brred)
 
     set -l arrow_color "$green"
     if test $__last_command_exit_status != 0
@@ -74,12 +76,13 @@ function fish_prompt
         set arrow "$arrow_color# "
     end
 
-    set -l cwd $cyan(basename (prompt_pwd))
+    set -l cwd $cyan(prompt_pwd --full-length-dirs=2 --dir-length=1)
 
     set -l repo_info
     if set -l repo_type (_repo_type)
         set -l repo_branch $red(_repo_branch_name $repo_type)
-        set repo_info "$blue $repo_type:($repo_branch$blue)"
+        # set repo_info "$blue $repo_type:($repo_branch$blue)"
+        set repo_info "$blue ($repo_branch$blue)"
 
         if _is_repo_dirty $repo_type
             set -l dirty "$yellow ✗"
@@ -87,9 +90,11 @@ function fish_prompt
         end
     end
 
+    set -l host_info ""
     if test -n "$SSH_TTY"
-        echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
+        set -l host_info  "$red$USER$white@$yellow(prompt_hostname) "
+        # echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
     end
 
-    echo -n -s $arrow ' '$cwd $repo_info $normal ' '
+    echo -n -s $host_info$arrow ' '$cwd $repo_info $normal ' '
 end
