@@ -1,6 +1,5 @@
 format = """
 $os\
-$line_break\
 $username\
 $hostname\
 $directory\
@@ -24,13 +23,13 @@ truncation_symbol = ''
 [username]
 style_user = 'yellow'
 style_root = 'black bold'
-format = '[$user]($style)@'
+format = ' [$user]($style) '
 disabled = false
-show_always = false
+show_always = true
 
 [hostname]
 ssh_only = true
-format = '(bold blue)[$hostname](green) '
+format = '(white)@(bold blue)[$hostname]'
 disabled = false
 
 [line_break]
