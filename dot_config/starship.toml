@@ -16,7 +16,7 @@ $sudo"""
 
 [directory]
 style = "bold blue"
-truncation_length = 4
+truncation_length = 1
 truncate_to_repo = true
 truncation_symbol = ''
 
