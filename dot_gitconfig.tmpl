@@ -1,6 +1,11 @@
 [user]
 name = Shad Kaske
-email = shadkaske@gmail.com
+email = {{ if eq .chezmoi.hostname "ksk-arch" "ksk-ubuntu" -}}
+shadkaske@gmail.com
+{{- else -}}
+Shad.Kaske@showplacecabinetry.com
+{{- end }}
+
 [core]
 editor = nvim
 [merge]
@@ -42,3 +47,5 @@ allow = always
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
+# vim: ft=ini:
