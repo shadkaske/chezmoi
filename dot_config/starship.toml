@@ -25,7 +25,7 @@ style_user = 'yellow'
 style_root = 'black bold'
 format = ' [$user]($style) '
 disabled = false
-show_always = true
+show_always = false
 
 [hostname]
 ssh_only = true
@@ -61,6 +61,7 @@ style = "yellow"
 
 [os]
 disabled = false
+format = "[$symbol]($style) "
 style = "bright-cyan"
 
 [os.symbols]
