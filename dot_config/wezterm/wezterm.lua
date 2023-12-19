@@ -47,8 +47,8 @@ config.default_cursor_style = "BlinkingUnderline"
 
 -- WindowPadding
 config.window_padding = {
-	left = 2,
-	right = 2,
+	left = 4,
+	right = 4,
 	top = 4,
 	bottom = 4,
 }
