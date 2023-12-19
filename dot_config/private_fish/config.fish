@@ -5,6 +5,7 @@ fish_add_path $HOME/.cargo/bin/
 fish_add_path $HOME/.fzf/bin/
 fish_add_path /usr/local/lib/npm/bin/
 fish_add_path $HOME/.local/share/npm/bin/
+fish_add_path $HOME/.tmux/plugins/t-smart-tmux-session-manager/bin
 
 set -Ux EDITOR nvim
 
