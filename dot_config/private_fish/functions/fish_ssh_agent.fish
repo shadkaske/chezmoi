@@ -22,18 +22,20 @@ end
 
 
 function fish_ssh_agent --description "Start ssh-agent if not started yet, or uses already started ssh-agent."
-    if test -z "$SSH_ENV"
-       set -xg SSH_ENV $HOME/.ssh/environment
-    end
+    if ! test -z "$SSH_TTY"
+        if test -z "$SSH_ENV"
+           set -xg SSH_ENV $HOME/.ssh/environment
+        end
 
-    if not __ssh_agent_is_started
-       __ssh_agent_start
-    end
+        if not __ssh_agent_is_started
+           __ssh_agent_start
+        end
 
-    if __ssh_agent_is_started
-        for file in ~/.ssh/id_*
-            if string match -rq '^id_.*[^(\.pub)]' (path basename file)
-                ssh-add -q $file;
+        if __ssh_agent_is_started
+            for file in ~/.ssh/id_*
+                if string match -rq '^id_.*[^(\.pub)]' (path basename file)
+                    ssh-add -q $file;
+                end
             end
         end
     end
