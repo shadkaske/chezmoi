@@ -23,13 +23,13 @@ truncation_symbol = ''
 [username]
 style_user = 'yellow'
 style_root = 'black bold'
-format = ' [$user]($style) '
+format = '[$user]($style)'
 disabled = false
 show_always = false
 
 [hostname]
 ssh_only = true
-format = '@(white)[$hostname](bold blue)'
+format = '@(white)[$hostname]($style) '
 disabled = false
 
 [line_break]
