@@ -14,6 +14,8 @@ abbr --add czed chezmoi edit
 abbr --add czap chezmoi apply
 abbr --add czdf chezmoi diff
 abbr --add czad chezmoi add
+abbr --add xoff sudo phpdismod xdebug
+abbr --add xon sudo phpenmod xdebug
 
 abbr --add ls eza --icons
 
