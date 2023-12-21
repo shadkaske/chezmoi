@@ -33,6 +33,7 @@ rebase = false
 defaultBranch = master
 [protocol "file"]
 allow = always
+
 [gitflow "prefix"]
 	feature = feature/
 	bugfix = bugfix/
@@ -40,12 +41,17 @@ allow = always
 	hotfix = hotfix/
 	support = support/
 	versiontag =
+
 [gitflow "branch"]
-	master = master
+	master = main
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
+[safe]
+    directory = *
 
 # vim: ft=ini:
