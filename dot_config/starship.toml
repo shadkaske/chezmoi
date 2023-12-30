@@ -33,7 +33,7 @@ format = '@(white)[$hostname]($style) '
 disabled = false
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 success_symbol = "[❯](purple)"
