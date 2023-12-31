@@ -1,68 +1,63 @@
 format = """
+[](#b4befe)\
 $os\
 $username\
 $hostname\
+[](bg:#A6E3A1 fg:#b4befe)\
+$sudo\
+[](bg:#89B4FA fg:#A6E3A1)\
 $directory\
+[](bg:#f5e0dc fg:#89B4FA)\
 $git_branch\
 $git_status\
+[](bg:#94E2D5 fg:#f5e0dc)\
+$nodejs\
+$rust\
 $python\
-$line_break\
-$character"""
+$php\
+$character\
+"""
+# Disable the blank line at the start of the prompt
+# add_newline = false
 
-right_format = """
-$status\
-$commnad_duration\
-$sudo"""
-
-[directory]
-style = "bold blue"
-truncation_length = 2
-truncate_to_repo = false
-truncation_symbol = ''
+[character]
+success_symbol = "[](fg:#94E2D5 bg:#74C7EC)[ ](fg:#74C7EC)"
+error_symbol = "[](fg:#94E2D5 bg:#f38ba8)[ ](fg:#f38ba8)"
+vimcmd_symbol = "[](fg:#94E2D5 bg:#a6adc8)[ ](fg:#a6adc8)"
 
 [username]
-style_user = 'yellow'
-style_root = 'black bold'
-format = '[$user]($style)'
-disabled = false
 show_always = false
+style_user = "fg:#45475a bg:#b4befe"
+style_root = "fg:#45475a bg:#b4befe"
+format = '[ $user]($style)'
+disabled = false
 
 [hostname]
 ssh_only = true
-format = '@(white)[$hostname]($style) '
-disabled = false
-
-[line_break]
-disabled = false
-
-[character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
-
-[git_branch]
-format = "[$branch]($style) "
-style = "bright-black"
-
-[git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style)"
-style = "cyan"
-# conflicted = "​"
-# untracked = "​"
-# modified = "​"
-# staged = "​"
-# renamed = "​"
-# deleted = "​"
-stashed = "≡"
-
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+format = '[@](fg:#45475a bg:#b4befe)[$hostname](fg:#45475a bg:#b4befe)'
 
 [os]
+style = "fg:#45475a bg:#b4befe"
+disabled = false # Disabled by default
+
+[sudo]
+style = "bg:#A6E3A1 fg:#45475a"
+format = "[ 󱎛]($style)"
 disabled = false
-format = "[$symbol]($style) "
-style = "bright-cyan"
+
+[shell]
+disabled = false
+style = "bg:#A6E3A1 fg:#45475a"
+format = "[$indicator]($style)"
+fish_indicator = " f"
+bash_indicator = " b"
+zsh_indicator = " z"
+
+[directory]
+style = "bg:#89B4FA fg:#45475a"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [os.symbols]
 Arch = "󰣇 "
@@ -79,15 +74,34 @@ RedHatEnterprise = "󱄛 "
 Ubuntu = " "
 Unknown = " "
 
-[status]
-disabled = false
+[git_branch]
+symbol = ""
+style = "bg:#f5e0dc fg:#45475A"
+format = '[ $symbol $branch ]($style)'
 
-[sudo]
-format='[$symbol]($style)'
-disabled = false
-symbol = " "
-style = "bright-cyan"
+[git_status]
+style = "bg:#f5e0dc fg:#45475A"
+format = '[$all_status$ahead_behind ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#94E2D5 fg:#45475A"
+format = '[ $symbol ($version) ]($style)'
+version_format = "${raw}"
+
+[rust]
+symbol = ""
+style = "bg:#94E2D5 fg:#45475A"
+format = '[ $symbol ($version) ]($style)'
 
 [python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
+symbol = " "
+style = "bg:#94E2D5 fg:#45475A"
+format = '[ ${symbol}($virtualenv $version) ]($style)'
+version_format = "${raw}"
+
+[php]
+symbol = "󰌟 "
+style = "bg:#94E2D5 fg:#45475A"
+format = '[$symbol$version ]($style)'
+version_format = "${raw}"
