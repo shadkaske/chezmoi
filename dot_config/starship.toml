@@ -3,9 +3,7 @@ format = """
 $os\
 $username\
 $hostname\
-[](bg:#A6E3A1 fg:#b4befe)\
-$sudo\
-[](bg:#89B4FA fg:#A6E3A1)\
+[](bg:#89B4FA fg:#b4befe)\
 $directory\
 [](bg:#f5e0dc fg:#89B4FA)\
 $git_branch\
@@ -17,6 +15,8 @@ $python\
 $php\
 $character\
 """
+# [](bg:#A6E3A1 fg:#b4befe)\
+# $sudo\
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
@@ -34,15 +34,15 @@ disabled = false
 
 [hostname]
 ssh_only = true
-format = '[@](fg:#45475a bg:#b4befe)[$hostname](fg:#45475a bg:#b4befe)'
+format = '[@](fg:#585B70 bg:#b4befe)[$hostname](fg:#45475a bg:#b4befe)'
 
 [os]
 style = "fg:#45475a bg:#b4befe"
 disabled = false # Disabled by default
 
 [sudo]
-style = "bg:#A6E3A1 fg:#45475a"
-format = "[ 󱎛]($style)"
+style = "bold bg:#A6E3A1 fg:#F38BA8"
+format = "[ *]($style)"
 disabled = false
 
 [shell]
@@ -105,3 +105,4 @@ symbol = "󰌟 "
 style = "bg:#94E2D5 fg:#45475A"
 format = '[$symbol$version ]($style)'
 version_format = "${raw}"
+
