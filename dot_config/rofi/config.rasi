@@ -2,6 +2,7 @@ configuration{
     modi: "run,drun,window";
     show-icons: true;
     terminal: "kitty";
+    font: "Fira Sans Book 14";
     drun-display-format: " {icon} {name}";
     location: 0;
     disable-history: false;
@@ -13,4 +14,4 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "breeze-dark"
+@theme "Pop-Dark"

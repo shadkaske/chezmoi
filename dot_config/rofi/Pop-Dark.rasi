@@ -23,7 +23,7 @@
     normal-background:           @background;
     selected-normal-background:  @blue;
     separatorcolor:              @orange;
-    spacing:                     2;
+    spacing:                     8;
     urgent-background:           @red;
     alternate-urgent-foreground: @foreground;
     selected-urgent-background:  @red;
