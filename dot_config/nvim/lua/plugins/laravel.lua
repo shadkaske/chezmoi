@@ -20,6 +20,11 @@ return {
     -- },
   },
   event = { "VeryLazy" },
+  features = {
+    null_ls = {
+      enable = true,
+    },
+  },
   config = function()
     require("laravel").setup()
     require("telescope").load_extension "laravel"
