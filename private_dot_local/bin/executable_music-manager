@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Launch your favorite music app
+
+kitty --class musicmanager ncmpcpp
+
+# default="ncmpcpp"
+
+# case $default in
+#     ncmpcpp)
+#         # st -c "$default" -t "Music Manager" -e "$default"
+#         alacritty --class musicmanager -t "Music Manager" -e "$default"
+#         ;;
+# esac
+#vi ft=sh

@@ -1,0 +1,3 @@
+#!/bin/bash
+# /opt/ibm/iAccessClientSolutions/Start_Programs/Linux_x86-64/acslaunch_linux-64 /plugin=sm
+iacs /plugin=sm
