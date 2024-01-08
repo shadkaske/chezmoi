@@ -9,14 +9,14 @@ $directory\
 $git_branch\
 $git_status\
 [](bg:#94E2D5 fg:#f5e0dc)\
-$nodejs\
-$rust\
-$python\
-$php\
 $character\
 """
 # [](bg:#A6E3A1 fg:#b4befe)\
 # $sudo\
+# $nodejs\
+# $rust\
+# $python\
+# $php\
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
@@ -78,6 +78,7 @@ Unknown = " "
 symbol = ""
 style = "bg:#f5e0dc fg:#45475A"
 format = '[ $symbol $branch ]($style)'
+truncation_length = 18
 
 [git_status]
 style = "bg:#f5e0dc fg:#45475A"
