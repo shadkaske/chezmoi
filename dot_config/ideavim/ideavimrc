@@ -36,6 +36,8 @@ let g:WhichKey_DefaultDelay = 600
 "" Keymaps
 "" =======
 sethandler <C-c> a:ide
+sethandler <C-q> a:ide
+sethandler <C-s> a:ide
 sethandler <C-v> n:vim i-v:ide
 sethandler <C-d> n:vim i-v:ide
 sethandler <C-u> n:vim i-v:ide
@@ -64,13 +66,14 @@ map <leader>j <Plug>(easymotion-s)
 
 nmap <leader>. :set invhlsearch<cr>
 
-let g:WhichKeyDesc_toggle_nerdtree "<leader>e Toggle NerdTree"
+let g:WhichKeyDesc_toggle_nerdtree "Toggle NerdTree"
 map <leader>e :NERDTreeToggle<cr>
 
-let g:WhichKeyDesc_easymotion = "<leader>j Jump with Easymotion"
+let g:WhichKeyDesc_easymotion = "Jump with Easymotion"
 map <leader>j <Plug>(easymotion-s)
 
-let g:WhichKeyDesc_hlsearch = "<leader>. Toggle Search Highlight"
+let g:WhichKeyDesc_hlsearch = "Toggle Search Highlight"
+nmap <leader>. ":nohlsearch<CR>"
 
 let g:WhichKeyDesc_close = "<leader>c Close Content"
 nmap <leader>c <Action>(CloseContent)
